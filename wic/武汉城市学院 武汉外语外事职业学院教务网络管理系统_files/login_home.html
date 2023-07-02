@@ -1,0 +1,383 @@
+
+<!-- saved from url=(0043)http://jwm.whflfa.com/_data/login_home.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=GBK"><title>
+	武汉城市学院 武汉外语外事职业学院
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"><meta http-equiv="X-UA-Compatible" content="IE=9"><meta name="renderer" content="webkit"><meta http-equiv="pragma" content="no-cache"><meta http-equiv="cache-control" content="no-cache"><meta http-equiv="expires" content="0"><link href="./Styles_home_new.css" type="text/css" rel="stylesheet">
+     <style>
+     .txzx{line-height:30px;WIDTH:164px;HEIGHT:28px;border:1px solid #e4e4e4;background-color:#FEFFFF;}
+     .tdcdd{color:#ccc;line-height:30px;}
+     .tdcdt{color:black;line-height:30px;}
+     </style>
+    <script language="JavaScript" src="./ymPrompt.js.下载"></script>
+	<script type="text/javascript" src="./jquery.min.js.下载"></script> 
+    <script language="javascript" type="text/javascript">
+        var jq = jq$ = j$ = jQuery.noConflict();
+        javascript: window.history.forward(1);
+        function showvc(obj) {
+            $("imgCode").style.display = "";
+            shtitcus(obj);
+        }
+        function returnValue() {
+            try { window.location.href = "login_home.aspx"; } catch (e) { alert(e); }
+        }
+
+        j$(function () {
+            j$("#qr_btn").click(function () {
+                $("lbl_zhdl").style.color = "black";
+                $("qr_btn").style.color = "#2c93db";
+                parent.openqrwindow();
+                }
+			);
+
+            var explorer = window.navigator.userAgent.toLowerCase();
+            var versionIsOk = true;
+            //ie
+            if (explorer.indexOf("msie") >= 0) {
+                var ver = parseInt(explorer.match(/msie ([\d.]+)/)[1]);
+                if (ver < 8) {
+                    versionIsOk = false;
+                    parent.window.location.href = "../_data/version.html";
+                }
+            }
+
+            // ie11
+            else if (explorer.indexOf("trident") >= 0) {
+                var ver = parseInt(explorer.match(/rv:([\d.]+)/)[0].replace("rv:", ""));
+            }
+            //firefox
+            else if (explorer.indexOf("firefox") >= 0) {
+                var ver = explorer.match(/firefox\/([\d.]+)/)[1];
+            }
+            //Chrome
+            else if (explorer.indexOf("chrome") >= 0) {
+                var ver = explorer.match(/chrome\/([\d.]+)/)[1];
+            }
+            //Opera
+            else if (explorer.indexOf("opera") >= 0) {
+                var ver = explorer.match(/opera.([\d.]+)/)[1];
+            }
+            //Safari
+            else if (explorer.indexOf("safari") >= 0) {
+                var ver = explorer.match(/version\/([\d.]+)/)[1];
+            } else {
+                // other
+                versionIsOk = false;
+                parent.window.location.href = "../_data/version.html";
+            }
+          }
+        )
+
+        function CkValue() {
+            var vU = "帐号";
+            var vcFlag = "YES";
+            var cwcs_flag = "0";
+
+            if ($('txt_asmcdefsddsd').value == '' || $('txt_asmcdefsddsd').value=="请输入帐号") {
+                alert('须录入' + vU + '！');
+                $('txt_asmcdefsddsd').focus(); 
+                return false;
+            }
+            else if ($('txt_pewerwedsdfsdff').value == '') {
+                alert('须录入密码！');
+                if ($("txt_psasas").style.display == "") {
+                    $("txt_psasas").focus();
+                }
+                else {
+                    $('txt_pewerwedsdfsdff').focus();
+                }
+                return false;
+            }
+            else if (($('txt_sdertfgsadscxcadsads').value == '' || $('txt_sdertfgsadscxcadsads').value == '请输入验证码') && vcFlag == "YES" && cwcs_flag == "1") {
+                alert('须录入验证码！');
+                $('txt_sdertfgsadscxcadsads').focus(); 
+                return false;
+            }
+            else {
+                $('divLogNote').innerHTML = '<font color="red">正在通过身份验证...请稍候!</font>';
+                document.getElementById("txt_pewerwedsdfsdff").value = '';
+                //document.getElementById("txt_sdertfgsadscxcadsads").value = '';
+                Logon.action = "login_home.aspx";
+                Logon.method = "post";
+                Logon.submit();
+                return true;
+            }
+        }
+        function ChkType(obj) {
+            var schoolcode = "13235";
+            if (schoolcode == "10482" || schoolcode == "10459")//洛阳师范学院、郑州大学体育学院
+            {
+                if (obj.value == "STU") {
+                    document.getElementById("lbl_wjmm").style.display = "";
+                } else {
+                    document.getElementById("lbl_wjmm").style.display = "none";
+                }
+            }
+        }
+        function shtitcus(obj) {
+            if (obj.id == "txt_sdertfgsadscxcadsads") {
+                if (obj.value == "请输入验证码") {
+                    obj.value = "";
+                    obj.style.color = "black";
+                }
+            }
+            if (obj.id == "txt_psasas") {
+                if (obj.value == "请输入密码") {
+                    obj.style.display = "none";
+                    document.getElementById("txt_pewerwedsdfsdff").style.display = "";
+                    document.getElementById("txt_pewerwedsdfsdff").focus();
+                }
+            }
+            if (obj.id == "txt_asmcdefsddsd") {
+                if (obj.value == "请输入帐号") {
+                    obj.value = "";
+                    obj.style.color = "black";
+                }
+            }
+        }
+
+        function shtitblur(obj){
+            if (obj.id == "txt_sdertfgsadscxcadsads") {
+                if (obj.value == "") {
+                    obj.value = "请输入验证码";
+                    obj.style.color = "#ccc";
+                }
+            }
+            if (obj.id == "txt_pewerwedsdfsdff") {
+                if (obj.value == "") {
+                    obj.style.display = "none";
+                    document.getElementById("txt_psasas").style.display = "";
+                }
+            }
+            if (obj.id == "txt_asmcdefsddsd") {
+                if (obj.value == "") {
+                    obj.value = "请输入帐号";
+                    obj.style.color = "#ccc";
+                }
+            }
+        }
+
+        function validatecode(flag) {
+            if (flag == "1") {
+                $("sp_random").style.display = "none";
+                $("imgCode").style.display = "";
+                $("yzm_code").style.top = "6px";
+                $("txt_sdertfgsadscxcadsads").disabled = false;
+                $("txt_sdertfgsadscxcadsads").style.backgroundColor = "#fff";
+                $("txt_sdertfgsadscxcadsads").style.color = "#ccc";
+                $("txt_sdertfgsadscxcadsads").value = "请输入验证码";
+            }
+            else {
+                $("imgCode").style.display = "none";
+                $("sp_random").style.display = "";
+                $("sp_random").style.top = "2px";
+                $("txt_sdertfgsadscxcadsads").style.backgroundColor = "#E8E8E8";
+                $("txt_sdertfgsadscxcadsads").style.color = "#ccc";
+                $("txt_sdertfgsadscxcadsads").disabled = true;
+                $("txt_sdertfgsadscxcadsads").value = "验证码";
+            }
+        }
+
+        function doMobileReset() {
+            var theURL = "retrievePassword_one.aspx";
+            ymPrompt.win({ message: theURL, width: 1010, height: 310, title: "重置密码", handler: doHanler, maxBtn: false, minBtn: false, closeBtn: true, iframe: true });
+        }
+
+        function doHanler(tp) {
+
+        }
+        function return2login(e) {
+            if (!e) e = window.event;
+            if ((e.keyCode || e.which) == 13) {
+                CkValue();
+            }
+        }
+
+        function openssowindow() { 
+            
+        }
+
+		</script>
+		<script type="text/javascript" src="./global.js.下载"></script>
+		<script type="text/javascript" src="./md5.js.下载"></script>
+		<script type="text/javascript">
+function ChkValue(){
+ var vU=$('UID').innerHTML;
+ vU=vU.substring(0,1)+vU.substring(2,3);
+ var vcFlag = "YES"; if ($('txt_asmcdefsddsd').value==''){
+ alert('须录入'+vU+'！');$('txt_asmcdefsddsd').focus();return false;
+}
+ else if ($('txt_pewerwedsdfsdff').value==''){
+ alert('须录入密码！');$('txt_pewerwedsdfsdff').focus();return false;
+}
+ else if ($('txt_sdertfgsadscxcadsads').value=='' && vcFlag == "YES"){
+ alert('须录入验证码！');$('txt_sdertfgsadscxcadsads').focus();return false;
+}
+ else { $('divLogNote').innerHTML='<font color="red">正在通过身份验证...请稍候!</font>';
+   document.getElementById("txt_pewerwedsdfsdff").value = '';
+ document.getElementById("txt_sdertfgsadscxcadsads").value = ''; 
+ return true;}
+ }
+function SelType(obj){
+ var s=obj.options[obj.selectedIndex].getAttribute('usrID');
+ $('UID').innerHTML=s;
+ selTyeName();
+}
+function openWinLog(theURL,w,h){
+var Tform,retStr;
+ if(theURL.indexOf('ReSet_PassWord.aspx')>-1 && ',10482,10466,12425,10459,'.indexOf(',13235,') <= -1 ) {
+ parent.doMobileReset(); } else {
+pop=window.open(theURL,'winKPT','width=' + w + ',height=' + h + ',toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,status=no'); //pop.moveTo(0,75);
+eval("Tform='dialogWidth:"+w+"px;dialogHeight:"+h+"px;status:no;scrollbars=no;help:no'");
+pop.moveTo((screen.width-w)/2,(screen.height-h)/2);if(typeof(retStr)!='undefined') alert(retStr);
+}
+}
+function showLay(divId){
+var objDiv = eval(divId);
+if (objDiv.style.display=="none")
+{objDiv.style.display="";}
+else{objDiv.style.display="none";}
+}
+function selTyeName(){
+  $('typeName').value=$N('Sel_Type')[0].options[$N('Sel_Type')[0].selectedIndex].text;
+}
+window.onload=function(){
+	var sPC=MSIE?window.navigator.userAgent+window.navigator.cpuClass+window.navigator.appMinorVersion+' SN:NULL':window.navigator.userAgent+window.navigator.oscpu+window.navigator.appVersion+' SN:NULL';
+try{$('pcInfo').value=sPC;}catch(err){}
+try{$('txt_asmcdefsddsd').focus();}catch(err){}
+try{$('typeName').value=$N('Sel_Type')[0].options[$N('Sel_Type')[0].selectedIndex].text;}catch(err){}
+}
+function openWinDialog(url,scr,w,h)
+{
+var Tform;
+eval("Tform='dialogWidth:"+w+"px;dialogHeight:"+h+"px;status:"+scr+";scrollbars=no;help:no'");
+window.showModalDialog(url,1,Tform);
+}
+function openWin(theURL){
+var Tform,w,h;
+try{
+	w=window.screen.width-10;
+}catch(e){}
+try{
+h=window.screen.height-30;
+}catch(e){}
+try{eval("Tform='width="+w+",height="+h+",scrollbars=no,status=no,resizable=yes'");
+pop=parent.window.open(theURL,'',Tform);
+pop.moveTo(0,0);
+parent.opener=null;
+parent.close();}catch(e){}
+}
+function changeValidateCode(Obj){
+var dt = new Date();
+Obj.src="../sys/ValidateCode.aspx?t="+dt.getMilliseconds();
+}
+function chkpwd(obj) { if(obj.value!='')  {    var s=md5(document.all.txt_asmcdefsddsd.value+md5(obj.value).substring(0,30).toUpperCase()+'13235').substring(0,30).toUpperCase();  document.all.dsdsdsdsdxcxdfgfg.value=s;} else { document.all.dsdsdsdsdxcxdfgfg.value=obj.value;} }  function chkyzm(obj) {  if(obj.value!='') {   var s=md5(md5(obj.value.toUpperCase()).substring(0,30).toUpperCase()+'13235').substring(0,30).toUpperCase();   document.all.fgfggfdgtyuuyyuuckjg.value=s;} else {    document.all.fgfggfdgtyuuyyuuckjg.value=obj.value.toUpperCase();}}
+</script></head>
+ <body onselectstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" ondragstart="window.event.returnValue=false" onsource="window.event.returnValue=false" leftmargin="0" topmargin="0" onkeydown="return2login(event)">
+		<div id="divThePanel">
+	
+		<form method="post" action="http://jwm.whflfa.com/_data/login_home.aspx" id="Logon" onsubmit="return CkValue();" autocomplete="off">
+	<div class="aspNetHidden">
+	<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTExMDMyNjY2MDhkZA==">
+	</div>
+
+	<div class="aspNetHidden">
+
+		<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAgLP9PSUBAKZwe+vBg==">
+	</div>	
+			<input id="pcInfo" type="hidden" name="pcInfo" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36undefined5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 SN:NULL">
+            <input type="hidden" id="txt_mm_expression" name="txt_mm_expression" value="">
+            <input type="hidden" id="txt_mm_length" name="txt_mm_length" value=""> 
+            <input type="hidden" id="txt_mm_userzh" name="txt_mm_userzh" value="">
+			<input id="typeName" type="hidden" name="typeName" value="学生">
+			<input type="hidden" id="dsdsdsdsdxcxdfgfg" name="dsdsdsdsdxcxdfgfg">
+			<input type="hidden" id="fgfggfdgtyuuyyuuckjg" name="fgfggfdgtyuuyyuuckjg">
+            <input type="hidden" id="validcodestate" name="validcodestate" value="0">
+
+			<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="height:286px">
+			    <tbody><tr>
+						<td align="center" width="265" height="36" style="padding-left:1px;font-family:微软雅黑;font-size:15px;color:#2c93db;font-weight:bold">
+							<label id="lbl_zhdl">帐号登录</label><label id="qr_btn" style="color:black;padding-left:40px;cursor:pointer;display:none;">扫码登录</label>
+						</td>
+					</tr>
+				<tr><td width="100%" height="170" align="center" valign="top" style="padding-left:20px">
+					<table height="100%" cellspacing="0" width="100%" cellpadding="0" border="0" align="center" style="padding-top:0px">
+					<tbody><tr style="padding-top:0px">
+						<td align="right" height="31px" valign="bottom"><img src="./d_seltype.gif" height="31px"></td>
+                        <td align="left" height="31px" valign="bottom"><div style="background:#fff;border:1px solid #ccc;padding:4px;width:158px;height:22px">
+                           <select style="WIDTH: 156px;border:1px solid #fff;color:#666;" name="Sel_Type" onchange="ChkType(this)">
+							<option value="STU" usrid="学　号">学生</option>
+<option value="TEA" usrid="工　号">教师教辅人员</option>
+<option value="SYS" usrid="帐　号">管理人员</option>
+<option value="ADM" usrid="帐　号">门户维护员</option>
+
+							</select></div>
+						</td>
+					</tr>
+					<tr style="padding-top:0px">
+						<td id="UID" align="right" height="41" valign="bottom"><img src="./d_accout.gif" height="31px"></td>
+                        <td align="left" valign="bottom"><input name="txt_asmcdefsddsd" type="text" value="请输入帐号" id="txt_asmcdefsddsd" class="txzx" autocomplete="off" onfocus="shtitcus(this)" onblur="shtitblur(this)" style="background-color: rgb(254, 255, 255); border-color: rgb(228, 228, 228); border-width: 1px; border-style: solid; height: 28px; width: 164px; text-indent: 5px; color: rgb(204, 204, 204);">
+						</td>
+					</tr>
+					<tr style="padding-top:0px">
+						<td id="PWD" align="right" height="41" valign="bottom"><img src="./d_mima.gif" height="31px"></td>
+                        <td align="left" valign="bottom"><input class="tx1" id="txt_pewerwedsdfsdff" style="WIDTH:164px;HEIGHT:28px;text-indent:5px;line-height:28px;border:1px solid #e4e4e4;background-color:#FEFFFF;display:none" type="password" maxlength="25" name="txt_pewerwedsdfsdff" autocomplete="off" onblur="shtitblur(this);chkpwd(this)" onkeyup="chkpwd(this)"><input class="tx1" id="txt_psasas" onfocus="shtitcus(this)" style="WIDTH:164px;HEIGHT:28px;line-height:28px;border:1px solid #e4e4e4;background-color:#FEFFFF;color:#ccc" maxlength="25" name="txt_psasas" value="请输入密码" autocomplete="off" onkeyup="shtitblur(this)">
+						</td>
+					</tr>
+					<tr>
+						 <td height="41" colspan="2" align="left" style="padding-left:5px;text-align:left;position:relative;" valign="bottom"><input type="text" class="tx1" onclick="showvc(this)" onfocus="showvc(this)" id="txt_sdertfgsadscxcadsads" name="txt_sdertfgsadscxcadsads" value="验证码" style="text-indent: 5px; width: 204px; height: 28px; line-height: 28px; vertical-align: bottom; margin-bottom: 4px; border: 1px solid rgb(228, 228, 228); background-color: rgb(232, 232, 232); color: rgb(204, 204, 204);" maxlength="4" autocomplete="off" onblur="shtitblur(this);chkyzm(this)" onkeyup="chkyzm(this)" disabled="">
+						 <div id="yzm_code" style="position:absolute;right:31px;top:12px;"><span id="sp_random" style="font-size: 12px; color: gray; top: 2px;">正常情况 免验证码</span>
+                         <img id="imgCode" src="./ValidateCode.aspx" onclick="changeValidateCode(this)" alt="单击可更换图片！" style="display:none;width:80px;height:28px;cursor:pointer;margin:0px;">			
+                        </div>
+                        </td>
+					</tr>
+                    <tr>
+                        <td align="right" colspan="2">
+							<table cellpadding="0" cellspacing="0" width="100%" border="0">
+								<tbody><tr>
+									<td style="text-align:left;padding-left:6px;">
+										<a href="http://jwm.whflfa.com/_data/version.html" target="_blank" style="font-family:微软雅黑;color:red;text-decoration:none">运行环境指南</a>
+									</td>
+									<td style="text-align:right;padding-right:20px;">
+										 <a href="javascript:void(0)" onclick="parent.doMobileReset()" style="color:#f87409;font-family:微软雅黑">忘记密码？</a>
+									</td>
+								</tr>
+							</tbody></table>
+						</td>
+					</tr>
+					<tr>										
+						<td valign="bottom" style="padding-left:6px;text-align:left" height="26" colspan="2"><input class="btnlogin" type="button" style="width:210px" value="" id="btn_login" name="btn_login" onclick="CkValue()">
+						</td>
+					</tr>
+								
+				</tbody></table>
+				</td></tr>
+				<tr><td valign="top" style="padding-top:5px">
+					<div align="center"><span id="divLogNote" style="color:#000000;"></span></div>
+				</td></tr>
+			</tbody></table>
+		</form>		
+	
+</div>
+										
+
+
+<script language="javascript" type="text/javascript">
+    if ("0" == "1")//小于两次不允许输入验证码
+    {
+        validatecode("1");
+    }
+    else {
+        validatecode("0"); //小于两次不允许输入验证码
+    }
+
+    var param = window.location.href.toString().toLowerCase();
+    param = param.substring(0, param.length - 21);
+    var xp = parent.window.location.href.toString().toLowerCase();
+    if (xp != param && xp != param + "home.aspx") {
+        if ("1" != "2" && xp != param + "index.aspx" && xp != param + "default.aspx") 
+            window.top.location.href = "../_help/Sorry.aspx?str=系统出错！";
+    }
+</script>
+
+
+<div><div id="maskLevel" style="position:absolute;top:0;left:0;display:none;text-align:center;z-index:10000;"></div><div id="ym-window" style="position:absolute;z-index:10001;display:none"><div class="ym-tl" id="ym-tl"><div class="ym-tr"><div class="ym-tc" style="cursor:move;"><div class="ym-header-text"></div><div class="ym-header-tools"><div class="ymPrompt_min" title="最小化"><strong>0</strong></div><div class="ymPrompt_max" title="最大化"><strong>1</strong></div><div class="ymPrompt_close" title="关闭"><strong>r</strong></div></div></div></div></div><div class="ym-ml" id="ym-ml"><div class="ym-mr"><div class="ym-mc"><div class="ym-body" style="position:relative"></div></div></div></div><div class="ym-ml" id="ym-btnl"><div class="ym-mr"><div class="ym-btn"></div></div></div><div class="ym-bl" id="ym-bl"><div class="ym-br"><div class="ym-bc"></div></div></div></div></div></body></html>

@@ -1,0 +1,104 @@
+
+<!-- saved from url=(0044)http://jwm.whflfa.com/_data/index_tzggn.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=GBK"><title>
+	通知公告
+</title>
+<script type="text/javascript" src="./global.js.下载"></script>
+<link rel="stylesheet" href="./Styles_home_new.css" type="text/css">
+<style>
+body{margin:0 0 0 5px;position:relative;font-size:14px; font-family:"微软雅黑";}
+#main{_float:left;width:100%;height:95%;overflow:auto;}
+#bottom{margin-top:10px;margin-right:10px;text-align:right;}
+span{color:#2A7CB1;cursor:pointer;float:right;}
+td.news{width:72%;cursor:pointer;height:26px;font-size:14px; font-family:"微软雅黑";}
+td{font-size:14px; font-family:"微软雅黑";}
+</style>
+<script language="javascript">
+
+    function openWinX(url, name, w, h) {
+        var pop = window.open(url, name, "width=" + w + ",height=" + h + ",toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,status=no");
+        pop.moveTo((screen.width - w) / 2, (screen.height - h) / 2);
+    }
+
+    function popOpen(id) {
+        var win = window.open('../_data/read_detail_news.aspx?tid=' + id, '', 'width=660,height=550,resizable=yes,menubar=yes,toolbar=no,location=no,scrollbars=yes,status=no');
+        win.moveTo((screen.availWidth - 550) / 2, 100);
+    }
+    function popWinMore() {
+        var pop, w = 550, h = 360;
+        var theURL = "index_newsall.aspx";
+        pop = window.open(theURL, "winDWL", "width=" + w + ",height=" + h + ",resizable=no,menubar=no,toolbar=no,location=no,scrollbars=no,status=no")
+        pop.moveTo((screen.width - w) / 2, 100);
+    }
+    function truesubstring(value) {
+        var str, Num = 0;
+        var rtn = "";
+        var len = 54;
+        
+        for (var i = 0; i < value.length; i++) {
+            str = value.substring(i, i + 1);
+            if (str <= "~") //对双字节字特殊处理
+            {
+                Num += 1;
+                rtn = rtn + str;
+            }
+            else {
+                Num += 2;
+                rtn = rtn + str;
+            }
+
+            if (Num >= len) {
+                rtn = rtn + "…";
+                return rtn;
+            }
+        }
+        return rtn;
+    }
+</script>
+</head>
+<body onselectstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" ondragstart="window.event.returnValue=false" onsource="window.event.returnValue=false">
+<div id="main">
+	<div id="dup1">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="padding-left:5px">
+		
+			<tbody><tr>
+				<td width="15px" nowrap=""><img src="./index_news_dot.gif" width="11px" height="10px"></td>
+				<td class="news" valign="bottom">
+						<a href="javascript:void(0)" onclick="popOpen(19)" title="关于2022年5月全国职场英语考试报名通知"><script language="javascript">document.write(truesubstring("关于2022年5月全国职场英语考试报名通知"))</script>关于2022年5月全国职场英语考试报名通知</a>
+				</td>
+                <td style="width:25%;text-align:right;padding-right:8px;color:#999" valign="bottom">2022-03-14 10:53:57</td>
+			</tr>
+		
+			<tr>
+				<td width="15px" nowrap=""><img src="./index_news_dot.gif" width="11px" height="10px"></td>
+				<td class="news" valign="bottom">
+						<a href="javascript:void(0)" onclick="popOpen(18)" title="关于开展2021－2022学年第一学期 学生评教工作的通知"><script language="javascript">document.write(truesubstring("关于开展2021－2022学年第一学期 学生评教工作的通知"))</script>关于开展2021－2022学年第一学期 学生评教工作的通知</a>
+				</td>
+                <td style="width:25%;text-align:right;padding-right:8px;color:#999" valign="bottom">2021-12-02 15:48:17</td>
+			</tr>
+		
+			<tr>
+				<td width="15px" nowrap=""><img src="./index_news_dot.gif" width="11px" height="10px"></td>
+				<td class="news" valign="bottom">
+						<a href="javascript:void(0)" onclick="popOpen(17)" title="关于2021年12月全国职场英语考试报名通知"><script language="javascript">document.write(truesubstring("关于2021年12月全国职场英语考试报名通知"))</script>关于2021年12月全国职场英语考试报名通知</a>
+				</td>
+                <td style="width:25%;text-align:right;padding-right:8px;color:#999" valign="bottom">2021-10-19 10:19:47</td>
+			</tr>
+		
+			<tr>
+				<td width="15px" nowrap=""><img src="./index_news_dot.gif" width="11px" height="10px"></td>
+				<td class="news" valign="bottom">
+						<a href="javascript:void(0)" onclick="popOpen(16)" title="关于2021-2022-1学期体育课保健班（藏龙岛校区）申请的通知"><script language="javascript">document.write(truesubstring("关于2021-2022-1学期体育课保健班（藏龙岛校区）申请的通知"))</script>关于2021-2022-1学期体育课保健班（藏龙岛校区）申请的通知…</a>
+				</td>
+                <td style="width:25%;text-align:right;padding-right:8px;color:#999" valign="bottom">2021-10-12 10:54:45</td>
+			</tr>
+		
+		</tbody></table>
+	</div>
+	<div id="dup2"></div>
+</div>
+<div id="bottom"></div>
+	<script type="text/javascript"></script>
+
+
+</body></html>

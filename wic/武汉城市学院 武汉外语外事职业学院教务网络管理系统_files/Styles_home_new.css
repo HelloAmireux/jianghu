@@ -1,0 +1,97 @@
+body { 
+	font-size:14px; font-family:"Î¢ÈíÑÅºÚ"; color: #626262;
+	
+    SCROLLBAR-FACE-COLOR: #e9e9e9; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #e9e9e9;
+	SCROLLBAR-SHADOW-COLOR: #e9e9e9; 
+	SCROLLBAR-DLIGHT-COLOR: #e9e9e9;
+	SCROLLBAR-ARROW-COLOR: #e9e9e9; 
+	SCROLLBAR-TRACK-COLOR: #e9e9e9;
+	SCROLLBAR-DARKSHADOW-COLOR: #e9e9e9;
+	background:#ffffff;
+    
+}
+
+td {
+	font-family: "Î¢ÈíÑÅºÚ";
+	font-size: 14px;
+	text-decoration: none;
+	line-height: 20px;
+
+}
+A:link       {COLOR:#000;FONT-FAMILY:tahoma;TEXT-DECORATION:none; } /*003399*/
+A:visited    {COLOR:#000;FONT-FAMILY:tahoma;TEXT-DECORATION:none; }
+A:active     {FONT-FAMILY:tahoma;TEXT-DECORATION:none; }
+A:hover      {COLOR:#5082E6;TEXT-DECORATION:none; border-left-width:1; border-right-width:1; border-top-width:1}
+
+TABLE      {FONT-FAMILY:Tahoma;FONT-SIZE:9pt;COLOR:#000000}
+pre        {FONT-FAMILY:Tahoma;FONT-SIZE:9pt;COLOR:#000000}
+td         { font-family: "Tahoma"; font-size: 9pt;table-layout:fixed;word-break :break-all}
+
+TEXTAREA   {scrollbar-face-color: #cccccc; scrollbar-highlight-color: #f5f9ff; 
+               scrollbar-shadow-color: #828282; scrollbar-3dlight-color: 
+               #000000; scrollbar-arrow-color: #797979; 
+               scrollbar-track-color: #cccccc; scrollbar-darkshadow-color: 
+               #000000; BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 12px; BORDER-BOTTOM-WIDTH: 1px; BACKGROUND-COLOR: #f4f4f4; BORDER-RIGHT-WIDTH: 1px}
+input		{font-size: 12px; background-color: #E8E8E8;border-top-width:1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; font-family:tahoma;color:#000000}
+
+span{
+	font-family: "ËÎÌå";
+	font-size: 9pt;
+	color: #2A7CB1;
+}
+
+input.but20 {
+	font-family: "ËÎÌå";font-size: 12px;border: none;cursor: pointer;	
+	background-image: url(../images/button/bgbtn2_0.gif);
+	height: 20px;width: 40px;}
+
+input.but40 
+{
+	font-family: "ËÎÌå";
+	font-size: 12px;
+	border: none;
+	cursor: pointer;	
+	background-image: url(../images/button/bgbtn4_0.gif);
+	height: 20px;
+	width: 62px
+}
+input.but41 
+{
+	font-family: "ËÎÌå";
+	font-size: 12px;
+	border: none;
+	cursor: pointer;	
+	background-image: url(../images/button/bgbtn4_0.gif);
+	height: 20px;
+	width: 62px
+}
+.btnlogin {
+	font-family: "ËÎÌå";font-size: 12px;border: none;cursor: pointer;	
+	background-image: url(../images/home_new/d_login.gif);
+	height: 33px;width: 219px;}	
+input.btnreset {
+	font-family: "ËÎÌå";font-size: 12px;border: none;cursor: pointer;	
+	background-image: url(../images/index_new/d_reset.gif);
+	height: 19px;width: 54px;}
+input.btnforget {
+	font-family: "ËÎÌå";font-size: 12px;border: none;cursor: pointer;	
+	background-image: url(../images/index_new/d_forget.png);
+	height: 19px;width: 65px;}
+input.btnjsbm
+{
+	CURSOR:pointer;font-size: 12px;border: none;cursor: pointer;background-image: url(../images/index_new/d_jsbm.png);height: 19px;width: 65px;
+}
+
+input.btnqrcode {
+	font-family: "ËÎÌå";font-size: 12px;border: none;cursor: hand;	
+	background-image: url(../images/index_new/d_saoma.png);
+	height: 19px;width: 65px;}	
+
+.button
+{
+	border:1px solid #CCCCCC;
+	background-color: #F5FAFF;/*F5FAFF*/
+	padding:2px 2px 0px 2px;
+}
+.text_left  {border:1px solid #B3B5B4;text-align:left;padding:1px;background-color:#fff}

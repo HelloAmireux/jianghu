@@ -1,0 +1,285 @@
+
+<!-- saved from url=(0047)http://jwm.whflfa.com/pub/Calen/Calen_home.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=GBK"><title>
+	日历
+</title>
+    <link href="./Calen.css" rel="Stylesheet" type="text/css">
+    <style type="text/css">
+    td{font-size:14px; font-family:"微软雅黑";}
+    </style>
+    <script language="javascript" src="./Calen.js.下载"></script>
+		<script language="javascript">
+		    var bgcTD = 'white', fntTD = '#000';
+		    var bgcTDin = '#ff9c00', fntTDin = 'white';
+		    var bgcTDsel = '#ff9c00', fntTDsel = 'white';
+		    var lastDayID = '';
+		    var cal = new Array(7);
+
+		    for (var i = 0; i < 7; i++) {
+		        cal[i] = new Array();
+		        for (var j = 0; j < 7; j++) {
+		            cal[i][j] = "";
+		        }
+		    }
+
+		    function calenMouse(theID, str) {
+		        if (theID.innerHTML == '') return false;
+		        //if (theID.style.backgroundColor != bgcTDsel) {
+		        if (theID.style.color != bgcTD) {
+		            if (theID.style.backgroundColor == bgcTDin || str == "out") {
+		                //theID.style.backgroundColor = bgcTD;
+		                document.getElementById(theID).style.backgroundImage = "url('../../images/home_new/d_rl_bg_k.gif')";
+		            } else if (theID.style.backgroundColor != bgcTDsel || str == "over") {
+		                //theID.style.backgroundColor = bgcTDin;
+		                document.getElementById(theID).style.backgroundImage = "url('../../images/home_new/d_rl_bg.gif')";
+		            }
+		        }
+		        if (theID.style.color == fntTDin) {
+		            theID.style.color = fntTD;
+		            //theID.style.backgroundColor = bgcTD;
+		            document.getElementById(theID).style.backgroundImage = "url('../../images/home_new/d_rl_bg_k.gif')";
+		        }
+		        else {
+		            theID.style.color = fntTDin;
+		            //theID.style.backgroundColor = bgcTDin;
+		            document.getElementById(theID).style.backgroundImage = "url('../../images/home_new/d_rl_bg.gif')";
+		        }
+
+		        //if (theID.style.backgroundColor == bgcTDsel) {
+		        if (theID.style.color == bgcTD) {
+		            theID.style.color = fntTDsel;
+		            //theID.style.backgroundColor = bgcTDsel;
+		            document.getElementById(theID).style.backgroundImage = "url('../../images/home_new/d_rl_bg.gif')";
+		        }
+		    }
+
+		    function calenClick(theID) {
+		        if (theID.innerHTML == '') return false;
+		        if (lastDayID == '') lastDayID = theID;
+		        try {
+		            //document.getElementById(lastDayID).style.backgroundColor = bgcTD;
+		            document.getElementById(lastDayID).style.backgroundImage = "url('../../images/home_new/d_rl_bg_k.gif')";
+		            document.getElementById(lastDayID).style.color = fntTD;
+		        }
+		        catch (e) { }
+		        lastDayID = theID;
+		        try {
+		            //document.getElementById(theID).style.backgroundColor = bgcTDsel;
+		            document.getElementById(theID).style.color = fntTDsel;
+		            document.getElementById(theID).style.backgroundImage = "url('../../images/home_new/d_rl_bg.gif')";
+		            window.day.value = document.getElementById(theID).innerHTML;
+		        }
+		        catch (e) { }
+		        window.lastDate.value = window.year.value + '-' + window.month.value + '-' + window.day.value;
+
+		        var sHTML;
+		        sHTML = GetCalenStr_new(window.year.value, window.month.value - 1, window.day.value);
+		        document.getElementById("divDayNote").innerHTML = sHTML;
+		    }
+		    function ret(theID) {
+		        if (document.getElementById(theID).innerHTML == "") {
+		            return "";
+		        }
+		        else {
+		            calenClick(theID);
+		        }
+		    }
+		    function parseDate(str) // 这个函数用来把字符串转换为日期格式
+		    {
+		        return new Date(Date.parse(str.replace(/-/g, "/")));
+		    }
+
+		    function draw() {
+		        var yy, mm, dd, theday;
+		        yy = window.year.value;
+		        mm = window.month.value;
+		        dd = 1;
+		        theday = new Date(parseDate(yy + "-" + mm + "-" + dd));
+
+		        cal[0][0] = "t10"; cal[0][1] = "t11"; cal[0][2] = "t12"; cal[0][3] = "t13"; cal[0][4] = "t14"; cal[0][5] = "t15"; cal[0][6] = "t16";
+		        cal[1][0] = "t20"; cal[1][1] = "t21"; cal[1][2] = "t22"; cal[1][3] = "t23"; cal[1][4] = "t24"; cal[1][5] = "t25"; cal[1][6] = "t26";
+		        cal[2][0] = "t30"; cal[2][1] = "t31"; cal[2][2] = "t32"; cal[2][3] = "t33"; cal[2][4] = "t34"; cal[2][5] = "t35"; cal[2][6] = "t36";
+		        cal[3][0] = "t40"; cal[3][1] = "t41"; cal[3][2] = "t42"; cal[3][3] = "t43"; cal[3][4] = "t44"; cal[3][5] = "t45"; cal[3][6] = "t46";
+		        cal[4][0] = "t50"; cal[4][1] = "t51"; cal[4][2] = "t52"; cal[4][3] = "t53"; cal[4][4] = "t54"; cal[4][5] = "t55"; cal[4][6] = "t56";
+		        cal[5][0] = "t60"; cal[5][1] = "t61"; cal[5][2] = "t62"; cal[5][3] = "t63"; cal[5][4] = "t64"; cal[5][5] = "t65"; cal[5][6] = "t66";
+
+		        for (var i = 0; i < 6; i++) {
+		            for (var j = 0; j < 7; j++) {
+		                document.getElementById(cal[i][j]).innerHTML = "";
+
+		                document.getElementById(cal[i][j]).style.fontsize = "9pt";
+		                //if (document.getElementById(cal[i][j]).style.backgroundColor == "#ff9c00") {
+		                if (document.getElementById(cal[i][j]).style.color == bgcTD) {
+		                    //document.getElementById(cal[i][j]).style.backgroundColor = "snow";
+		                    document.getElementById(cal[i][j]).style.backgroundImage = "url('../../images/home_new/d_rl_bg_k.gif')";
+		                    document.getElementById(cal[i][j]).style.color = "#000";
+		                }
+		            }
+		        }
+		        var d = theday.getDay();
+		        var ff = theday.getDate();
+		        document.getElementById(cal[0][d]).innerHTML = "";
+		        //theday.setDate(ff+1);
+		        //d=theday.getDay();
+		        //ff=theday.getDate();
+		        var i = 0;
+
+		        do {
+		            if (d == 0) { i++; }
+		            document.getElementById(cal[i][d]).innerHTML = ff;
+		            if (theday.toLocaleDateString() == new Date(parseDate(window.lastDate.value)).toLocaleDateString()) {
+		                calenClick(cal[i][d]);
+		            }
+		            theday.setDate(ff + 1);
+		            ff = theday.getDate();
+		            d = theday.getDay();
+		        } while (ff != 1);
+
+		    }
+		    function init() {
+		        var aa = new Date();
+		        window.year.value = aa.getFullYear();
+		        window.month.value = aa.getMonth() + 1;
+		        draw();
+		    }
+		    function up() {
+		        var year = new Date().getFullYear();
+		        if (parseInt(window.month.value) == 12) {
+		            if (parseInt(window.year.value) < year + 5) window.year.value = parseInt(window.year.value) + 1;
+		            window.month.value = 1;
+		        }
+		        else {
+		            window.month.value = parseInt(window.month.value) + 1;
+		        }
+		        draw();
+		    }
+
+		    function down() {
+		        var oldYear = new Date().getFullYear() - 4;
+		        if (parseInt(window.month.value) == 1) {
+		            if (parseInt(window.year.value) > oldYear) window.year.value = parseInt(window.year.value) - 1;
+		            window.month.value = 12;
+		        }
+		        else {
+		            window.month.value = parseInt(window.month.value) - 1;
+		        }
+		        draw();
+		    }
+		</script>
+		
+	</head>
+	<body onload="init()" style="background-color:white;padding-top:0px;padding-left:0px " onselectstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" ondragstart="window.event.returnValue=false" onsource="window.event.returnValue=false" leftmargin="0" topmargin="0">
+        <div style="width:100%;padding-top:8px;padding-left:8px;height:275px">
+		<select id="year" name="year" onchange="draw()">
+		
+			<option value="2019">2019</option>
+		 
+			<option value="2020">2020</option>
+		 
+			<option value="2021">2021</option>
+		 
+			<option value="2022">2022</option>
+		 
+			<option value="2023" selected="">2023</option>
+		 
+			<option value="2024">2024</option>
+		 
+			<option value="2025">2025</option>
+		 
+			<option value="2026">2026</option>
+		 
+			<option value="2027">2027</option>
+		 
+			<option value="2028">2028</option>
+		 		
+		</select>
+		<select id="month" name="month" onchange="draw()">
+			<option value="1" selected="">1月</option>
+			<option value="2">2月</option>
+			<option value="3">3月</option>
+			<option value="4">4月</option>
+			<option value="5">5月</option>
+			<option value="6">6月</option>
+			<option value="7">7月</option>
+			<option value="8">8月</option>
+			<option value="9">9月</option>
+			<option value="10">10月</option>
+			<option value="11">11月</option>
+			<option value="12">12月</option>
+		</select>
+		
+		<input type="hidden" id="day" name="day" value="15"> <input type="hidden" id="lastDate" name="lastDate" value="2023-6-15">
+		<table bgcolor="white" align="center" border="0" cellpadding="1" cellspacing="1" width="100%" style="padding-top:5px;padding-right:8px">
+			<tbody>
+				<tr style="height:30px;font-weight:bold">
+					<td width="15%" align="center" id="tdd">日</td>
+					<td width="14%" align="center">一</td>
+					<td width="14%" align="center">二</td>
+					<td width="14%" align="center">三</td>
+					<td width="14%" align="center">四</td>
+					<td width="14%" align="center">五</td>
+					<td width="15%" align="center">六</td>
+				</tr>
+				<tr>
+<td id="t10" onclick="ret(&#39;t10&#39;)" style="height:28px;cursor:pointer;" align="center"></td>
+<td id="t11" onclick="ret(&#39;t11&#39;)" style="height:28px;cursor:pointer;" align="center"></td>
+<td id="t12" onclick="ret(&#39;t12&#39;)" style="height:28px;cursor:pointer;" align="center"></td>
+<td id="t13" onclick="ret(&#39;t13&#39;)" style="height:28px;cursor:pointer;" align="center"></td>
+<td id="t14" onclick="ret(&#39;t14&#39;)" style="height:28px;cursor:pointer;" align="center">1</td>
+<td id="t15" onclick="ret(&#39;t15&#39;)" style="height:28px;cursor:pointer;" align="center">2</td>
+<td id="t16" onclick="ret(&#39;t16&#39;)" style="height:28px;cursor:pointer;" align="center">3</td>
+</tr>
+<tr>
+<td id="t20" onclick="ret(&#39;t20&#39;)" style="height:28px;cursor:pointer;" align="center">4</td>
+<td id="t21" onclick="ret(&#39;t21&#39;)" style="height:28px;cursor:pointer;" align="center">5</td>
+<td id="t22" onclick="ret(&#39;t22&#39;)" style="height:28px;cursor:pointer;" align="center">6</td>
+<td id="t23" onclick="ret(&#39;t23&#39;)" style="height:28px;cursor:pointer;" align="center">7</td>
+<td id="t24" onclick="ret(&#39;t24&#39;)" style="height:28px;cursor:pointer;" align="center">8</td>
+<td id="t25" onclick="ret(&#39;t25&#39;)" style="height:28px;cursor:pointer;" align="center">9</td>
+<td id="t26" onclick="ret(&#39;t26&#39;)" style="height:28px;cursor:pointer;" align="center">10</td>
+</tr>
+<tr>
+<td id="t30" onclick="ret(&#39;t30&#39;)" style="height:28px;cursor:pointer;" align="center">11</td>
+<td id="t31" onclick="ret(&#39;t31&#39;)" style="height:28px;cursor:pointer;" align="center">12</td>
+<td id="t32" onclick="ret(&#39;t32&#39;)" style="height:28px;cursor:pointer;" align="center">13</td>
+<td id="t33" onclick="ret(&#39;t33&#39;)" style="height:28px;cursor:pointer;" align="center">14</td>
+<td id="t34" onclick="ret(&#39;t34&#39;)" style="height: 28px; cursor: pointer; background-image: url(&quot;../../images/home_new/d_rl_bg.gif&quot;); color: white;" align="center">15</td>
+<td id="t35" onclick="ret(&#39;t35&#39;)" style="height:28px;cursor:pointer;" align="center">16</td>
+<td id="t36" onclick="ret(&#39;t36&#39;)" style="height:28px;cursor:pointer;" align="center">17</td>
+</tr>
+<tr>
+<td id="t40" onclick="ret(&#39;t40&#39;)" style="height:28px;cursor:pointer;" align="center">18</td>
+<td id="t41" onclick="ret(&#39;t41&#39;)" style="height:28px;cursor:pointer;" align="center">19</td>
+<td id="t42" onclick="ret(&#39;t42&#39;)" style="height:28px;cursor:pointer;" align="center">20</td>
+<td id="t43" onclick="ret(&#39;t43&#39;)" style="height:28px;cursor:pointer;" align="center">21</td>
+<td id="t44" onclick="ret(&#39;t44&#39;)" style="height:28px;cursor:pointer;" align="center">22</td>
+<td id="t45" onclick="ret(&#39;t45&#39;)" style="height:28px;cursor:pointer;" align="center">23</td>
+<td id="t46" onclick="ret(&#39;t46&#39;)" style="height:28px;cursor:pointer;" align="center">24</td>
+</tr>
+<tr>
+<td id="t50" onclick="ret(&#39;t50&#39;)" style="height:28px;cursor:pointer;" align="center">25</td>
+<td id="t51" onclick="ret(&#39;t51&#39;)" style="height:28px;cursor:pointer;" align="center">26</td>
+<td id="t52" onclick="ret(&#39;t52&#39;)" style="height:28px;cursor:pointer;" align="center">27</td>
+<td id="t53" onclick="ret(&#39;t53&#39;)" style="height:28px;cursor:pointer;" align="center">28</td>
+<td id="t54" onclick="ret(&#39;t54&#39;)" style="height:28px;cursor:pointer;" align="center">29</td>
+<td id="t55" onclick="ret(&#39;t55&#39;)" style="height:28px;cursor:pointer;" align="center">30</td>
+<td id="t56" onclick="ret(&#39;t56&#39;)" style="height:28px;cursor:pointer;" align="center"></td>
+</tr>
+<tr>
+<td id="t60" onclick="ret(&#39;t60&#39;)" style="height:28px;cursor:pointer;" align="center"></td>
+<td id="t61" onclick="ret(&#39;t61&#39;)" style="height:28px;cursor:pointer;" align="center"></td>
+<td id="t62" onclick="ret(&#39;t62&#39;)" style="height:28px;cursor:pointer;" align="center"></td>
+<td id="t63" onclick="ret(&#39;t63&#39;)" style="height:28px;cursor:pointer;" align="center"></td>
+<td id="t64" onclick="ret(&#39;t64&#39;)" style="height:28px;cursor:pointer;" align="center"></td>
+<td id="t65" onclick="ret(&#39;t65&#39;)" style="height:28px;cursor:pointer;" align="center"></td>
+<td id="t66" onclick="ret(&#39;t66&#39;)" style="height:28px;cursor:pointer;" align="center"></td>
+</tr>
+
+			</tbody>
+		</table>
+        <div id="divDayNote" style="text-align:center;width:100%;font-size:12px"><br></div>
+        </div>
+	
+
+
+</body></html>

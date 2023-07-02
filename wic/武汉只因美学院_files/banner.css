@@ -1,0 +1,43 @@
+
+.banner{width: 100%;margin: 0 auto;position: relative;overflow: hidden;}
+.banner .swiper-slide a{display: block;height: 0;padding-bottom: 500px;background-repeat: no-repeat;background-position: center;background-size: cover;position: relative;padding-bottom: 730px;padding-bottom: 38%;}
+.banner .swiper-slide a:before{content: "";width: 100%;height: 120px;position: absolute;left: 0;bottom: 0;z-index: 2;background: url(../images/gray40.png) repeat;}
+.banner .swiper-slide a .tit{width: 1260px;font-size: 24px;color: #ffffff;line-height: 36px;font-weight: normal;position: absolute;left: 50%;margin-left: -630px;bottom: 68px;text-align: right;z-index: 3;
+box-sizing: border-box;padding-left: 380px;text-shadow: 1px 1.732px 0px rgba( 0, 0, 0, 0.3 );}
+.banner .swiper-button-prev,
+.banner .swiper-button-next{position: absolute;top: 39%;width: 44px;height: 72px;background: url(../images/arrow1.png) no-repeat left top;font-size: 0;}
+.banner .swiper-button-prev{left: auto;right: 50%;margin-right: 660px;}
+.banner .swiper-button-next{left: 50%;margin-left: 660px;background-position: left bottom;}
+
+.banner.swiper-container-horizontal > .swiper-pagination-bullets{width: 1260px;height: 0;position: absolute;left: 50%;margin-left: -630px;bottom: 95px;}
+.banner.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{width: 36px;height: 30px;float: left;margin: 0 5px 0 0;text-align: center;line-height: 30px;font-size: 16px;color: #ffffff;font-family: "Microsoft JhengHei","Microsoft Yahei";border-radius: 0;background: none;opacity: 1;}
+.banner.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active{background: #5e8f3a;}
+
+
+
+@media only screen and (max-width: 1440px) {
+.banner .swiper-button-prev{left: 0;right: auto;margin-right: 0;}
+.banner .swiper-button-next{right: 0;left: auto;margin-left: 0;}
+}
+
+@media only screen and (max-width: 1300px) {
+.banner.swiper-container-horizontal > .swiper-pagination-bullets{width: 100%;box-sizing: border-box;left: 0;margin-left: 0;padding: 0 5%;}
+.banner .swiper-slide a .tit{width: 100%;left: 0;margin-left: 0;box-sizing: border-box;padding-right: 5%;}
+
+.banner .swiper-slide a:before{height: 52px;}
+.banner .swiper-slide a .tit{bottom: 8px;font-size: 18px;}
+.banner.swiper-container-horizontal > .swiper-pagination-bullets{bottom: 40px;}
+}
+
+@media only screen and (max-width: 1220px) {
+.banner .swiper-slide a{padding-bottom: 41.6%;padding-bottom: 60.83%;}
+}
+
+@media only screen and (max-width: 1024px) {
+.banner.swiper-container-horizontal > .swiper-pagination-bullets{display: none;}
+.banner .swiper-slide a .tit{padding: 0 5%;text-align: center;}
+}
+@media only screen and (max-width: 768px) {
+.banner .swiper-button-prev, .banner .swiper-button-next{width: 30px;height: 50px;background:url(../images/gray40.png) repeat;font-size: 24px;text-align: center;
+text-align: center;line-height: 50px;color: #fff;font-family: "SimSun";}
+}
